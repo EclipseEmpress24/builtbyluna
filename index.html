@@ -3,39 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coming Soon - Built by Luna</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <title>Under a Spell - Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Baloo 2', cursive;
+      font-family: 'IM Fell English SC', serif;
+      background: url('https://i.imgur.com/yPHtr1G.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #3b2c1a;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
-      background: linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e);
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      color: #fff;
-      text-align: center;
+      overflow: hidden;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      background-color: rgba(255, 255, 255, 0.1);
+    .parchment {
+      background: rgba(255, 248, 220, 0.9);
+      border: 6px double #5c3d1e;
       padding: 2rem 3rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      max-width: 600px;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
@@ -43,23 +40,67 @@
       font-size: 1.25rem;
     }
 
-    .sparkle {
-      font-size: 2rem;
-      animation: sparkle 1s infinite alternate;
+    .candles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
     }
 
-    @keyframes sparkle {
-      0% { transform: scale(1); opacity: 0.7; }
-      100% { transform: scale(1.2); opacity: 1; }
+    .candle {
+      position: absolute;
+      width: 8px;
+      height: 30px;
+      background: linear-gradient(#fff9cc, #ffe97f);
+      border-radius: 2px;
+      box-shadow: 0 0 10px #ffeb7b;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-30px) rotate(1deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #6c5433;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="sparkle">✨</div>
-    <h1>Coming Soon!</h1>
-    <p>This magical section of the web is still under construction.</p>
-    <p>Stay tuned — it’ll be worth the wait! 🛠️</p>
+  <div class="candles" id="candle-container"></div>
+
+  <div class="parchment">
+    <h1>⚡ Coming Soon ⚡</h1>
+    <p>The magic is being brewed behind the scenes at <strong>Built by Luna</strong>.</p>
+    <p>Until then, may your spells be strong and your coffee stronger ☕</p>
   </div>
+
+  <footer>Made with a sprinkle of magic 🪄</footer>
+
+  <script>
+    const container = document.getElementById('candle-container');
+    for (let i = 0; i < 30; i++) {
+      const candle = document.createElement('div');
+      candle.className = 'candle';
+      candle.style.left = `${Math.random() * 100}%`;
+      candle.style.top = `${Math.random() * 80}%`;
+      candle.style.animationDuration = `${4 + Math.random() * 4}s`;
+      container.appendChild(candle);
+    }
+  </script>
 </body>
 </html>
