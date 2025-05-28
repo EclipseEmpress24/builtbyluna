@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon - Built by Luna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Baloo 2', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: #fff;
+      text-align: center;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 2rem 3rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    .sparkle {
+      font-size: 2rem;
+      animation: sparkle 1s infinite alternate;
+    }
+
+    @keyframes sparkle {
+      0% { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.2); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sparkle">✨</div>
+    <h1>Coming Soon!</h1>
+    <p>This magical section of the web is still under construction.</p>
+    <p>Stay tuned — it’ll be worth the wait! 🛠️</p>
+  </div>
+</body>
+</html>
